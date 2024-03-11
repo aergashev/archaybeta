@@ -2,3 +2,6 @@ opencv-python
 dlib 19.24.1
 Requests
 Numpy
+torch
+torchvision
+torchaudio
