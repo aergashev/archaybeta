@@ -1,16 +1,17 @@
 import cv2
 import dlib
 
+
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(r".\shape_predictor_68_face_landmarks.dat")
 
-gender_model = cv2.dnn.readNet(r".\deploy_gender.prototxt", r".\gender_net.caffemodel")
-age_model = cv2.dnn.readNet(r".\deploy_age.prototxt", r".\age_net.caffemodel")
+gender_model = cv2.dnn.readNet(r".\gender_deploy.prototxt", r".\gender_net.caffemodel")
+age_model = cv2.dnn.readNet(r".\age_deploy.prototxt", r".\age_net.caffemodel")
 
 gender_categories = ['Male', 'Female']
 age_categories = ['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 while True:
     ret, frame = cap.read()
