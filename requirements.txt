@@ -1,2 +1,2 @@
 opencv-python
-dlib
+dlib 19.24.1
